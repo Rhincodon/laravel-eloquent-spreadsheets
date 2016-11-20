@@ -33,7 +33,7 @@ trait Saveable
         }
 
         foreach (range(0, count(range($this->startColumn, $this->endColumn)) - 1) as $key) {
-            if (!empty($result[$key])) {
+            if (! empty($result[$key])) {
                 continue;
             }
 

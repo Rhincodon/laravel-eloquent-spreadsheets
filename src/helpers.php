@@ -1,6 +1,6 @@
 <?php
 
-if (!function_exists('getLettersToIdsTable')) {
+if (! function_exists('getLettersToIdsTable')) {
     /**
      * @param $startColumn
      * @param $endColumn

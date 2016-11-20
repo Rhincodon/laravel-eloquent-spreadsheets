@@ -2,6 +2,7 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/rhincodon/laravel-eloquent-spreadsheets.svg?style=flat-square)](https://packagist.org/packages/rhincodon/laravel-eloquent-spreadsheets)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![StyleCI](https://styleci.io/repos/74288997/shield)](https://styleci.io/repos/74288997)
 
 Under development
 

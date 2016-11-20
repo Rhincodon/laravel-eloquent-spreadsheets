@@ -43,8 +43,9 @@ class Sync extends Command
     {
         $modelType = $this->argument('modelType');
 
-        if (empty(config('laravel-eloquent-spreadsheets')["sync_models"][$modelType])) {
+        if (empty(config('laravel-eloquent-spreadsheets')['sync_models'][$modelType])) {
             $this->warn('Model not registered in config');
+
             return;
         }
 
@@ -60,12 +61,13 @@ class Sync extends Command
 
         if (empty($values)) {
             $this->warn('Sheet is empty');
+
             return;
         }
 
         foreach ($values as $value) {
             if (
-                !is_array($value) ||
+                ! is_array($value) ||
                 empty($value[getLettersToIdsTable($this->startColumn, $this->endColumn)[$this->idColumn]])
             ) {
                 continue;
@@ -74,7 +76,7 @@ class Sync extends Command
             $id = $value[getLettersToIdsTable($this->startColumn, $this->endColumn)[$this->idColumn]];
             $modelItem = $model->whereId($id)->first();
 
-            if (!$modelItem) {
+            if (! $modelItem) {
                 continue;
             }
 
@@ -107,7 +109,7 @@ class Sync extends Command
 
     private function prepareConfig($modelType)
     {
-        $this->config = config('laravel-eloquent-spreadsheets')["sync_models"][$modelType];
+        $this->config = config('laravel-eloquent-spreadsheets')['sync_models'][$modelType];
 
         asort($this->config['sync_attributes']);
         $this->startColumn = array_first($this->config['sync_attributes']);
