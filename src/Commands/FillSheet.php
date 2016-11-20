@@ -38,8 +38,9 @@ class FillSheet extends Command
     {
         $modelType = $this->argument('modelType');
 
-        if (empty(config('laravel-eloquent-spreadsheets')["sync_models"][$modelType])) {
+        if (empty(config('laravel-eloquent-spreadsheets')['sync_models'][$modelType])) {
             $this->warn('Model not registered in config');
+
             return;
         }
 
@@ -50,6 +51,6 @@ class FillSheet extends Command
             $this->info("Dispatched model with ID: {$modelItem->id}");
         }
 
-        $this->info("Dispatching completed");
+        $this->info('Dispatching completed');
     }
 }

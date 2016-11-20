@@ -46,6 +46,7 @@ class UpdateModelInSpreadsheet implements ShouldQueue
 
         if ($rowToInsert === false) {
             dispatch(new CreateModelInSpreadsheet($this->model, $this->config));
+
             return;
         }
 
