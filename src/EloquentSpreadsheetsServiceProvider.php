@@ -14,7 +14,7 @@ class EloquentSpreadsheetsServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../config/laravel-eloquent-spreadsheets.php' => config_path('laravel-eloquent-spreadsheets.php'),
+            __DIR__.'/../config/laravel-eloquent-spreadsheets.php' => config_path('laravel-eloquent-spreadsheets.php'),
         ], 'config');
 
         $this->bootObservers();
@@ -26,10 +26,10 @@ class EloquentSpreadsheetsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/laravel-eloquent-spreadsheets.php', 'laravel-eloquent-spreadsheets'
+            __DIR__.'/../config/laravel-eloquent-spreadsheets.php', 'laravel-eloquent-spreadsheets'
         );
 
-        $this->app->singleton(SpreadsheetService::class, function() {
+        $this->app->singleton(SpreadsheetService::class, function () {
             $client = (new SpreadsheetClient(config('laravel-eloquent-spreadsheets.credentials_path')))->client();
 
             return new SpreadsheetService($client);

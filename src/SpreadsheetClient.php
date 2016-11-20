@@ -28,11 +28,11 @@ class SpreadsheetClient
     }
 
     /**
-     * Init Client
+     * Init Client.
      */
     private function initClient()
     {
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $this->credentialsPath);
+        putenv('GOOGLE_APPLICATION_CREDENTIALS='.$this->credentialsPath);
         $this->client = new Google_Client();
         $this->client->useApplicationDefaultCredentials();
         $this->client->addScope(Google_Service_Sheets::SPREADSHEETS);

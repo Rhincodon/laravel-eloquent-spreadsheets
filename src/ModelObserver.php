@@ -35,6 +35,6 @@ class ModelObserver
      */
     public function getConfig($model)
     {
-        return config('laravel-eloquent-spreadsheets')["sync_models"][get_class($model)];
+        return config('laravel-eloquent-spreadsheets')['sync_models'][get_class($model)];
     }
 }
