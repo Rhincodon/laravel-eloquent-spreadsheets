@@ -4,7 +4,8 @@
     "keywords": [
         "laravel",
         "eloquent",
-        "spreadsheets"
+        "spreadsheets",
+        "google"
     ],
     "homepage": "https://github.com/Rhincodon/laravel-eloquent-spreadsheets",
     "license": "MIT",
