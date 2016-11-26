@@ -5,6 +5,7 @@
 [![StyleCI](https://styleci.io/repos/74288997/shield)](https://styleci.io/repos/74288997)
 
 Fast Preview:
+
 ![Preview](https://cloud.githubusercontent.com/assets/6630959/20640355/ca3f0676-b3ec-11e6-9d61-229092be3c09.gif "Preview")
 
 ## Installation
@@ -32,9 +33,11 @@ php artisan vendor:publish --provider="Rhinodontypicus\EloquentSpreadsheets\Eloq
 In Google Console create Service Account:
 
 Step 1:
+
 ![Step 1](https://cloud.githubusercontent.com/assets/6630959/20640446/1ad7ab2c-b3ef-11e6-8320-5c2d521c88f2.jpg)
 
 Step 2:
+
 ![Step 2](https://cloud.githubusercontent.com/assets/6630959/20640447/1ad94fc2-b3ef-11e6-93fe-bac58580d77f.jpg)
 
 After pressing Create it will give you credentials file, which you can use in your project. Just save it somewhere in storage.
