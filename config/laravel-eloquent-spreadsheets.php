@@ -3,6 +3,7 @@
 return [
     'credentials_path' => storage_path('credentials.json'),
     'sync_models' => [
+        /*
         \App\User::class => [
             'spreadsheet_id' => '17GOsXgEe6WdPJ-aCO46bNb9T6me96LTEasv-E61-AxI',
             'list_name' => 'Main',
@@ -13,5 +14,6 @@ return [
             ],
             'queue_name' => 'default',
         ],
+        */
     ],
 ];
