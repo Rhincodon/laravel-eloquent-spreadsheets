@@ -3,8 +3,8 @@
 namespace Rhinodontypicus\EloquentSpreadsheets;
 
 use Illuminate\Support\ServiceProvider;
-use Rhinodontypicus\EloquentSpreadsheets\Commands\FillSheet;
 use Rhinodontypicus\EloquentSpreadsheets\Commands\Sync;
+use Rhinodontypicus\EloquentSpreadsheets\Commands\FillSheet;
 
 class EloquentSpreadsheetsServiceProvider extends ServiceProvider
 {
