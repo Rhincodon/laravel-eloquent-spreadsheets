@@ -55,6 +55,10 @@ class EloquentSpreadsheetsServiceProvider extends ServiceProvider
         }
 
         foreach ($models as $modelClass => $modelConfig) {
+            if (empty($modelConfig['spreadsheet_id'])) {
+                continue;
+            }
+
             $modelClass::observe(new ModelObserver());
         }
 
