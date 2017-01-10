@@ -6,8 +6,8 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Rhinodontypicus\EloquentSpreadsheets\Jobs\Traits\Saveable;
 use Rhinodontypicus\EloquentSpreadsheets\SpreadsheetService;
+use Rhinodontypicus\EloquentSpreadsheets\Jobs\Traits\Saveable;
 
 class UpdateModelInSpreadsheet implements ShouldQueue
 {
