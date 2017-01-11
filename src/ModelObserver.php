@@ -19,7 +19,7 @@ class ModelObserver
     {
         $config = $this->getConfig($model);
 
-        if (!$this->shouldBeUpdated($model, $config)) {
+        if (! $this->shouldBeUpdated($model, $config)) {
             return;
         }
 

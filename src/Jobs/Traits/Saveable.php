@@ -25,7 +25,12 @@ trait Saveable
         $result = [];
 
         foreach ($this->config['sync_attributes'] as $attributeKey => $attributeColumn) {
-            if (empty($this->model->{$attributeKey})) {
+            if (!isset($this->model->{$attributeKey})) {
+                continue;
+            }
+
+            if (is_bool($this->model->{$attributeKey})) {
+                $result[$lettersToIdsTable[$attributeColumn]] = (int) $this->model->{$attributeKey};
                 continue;
             }
 
