@@ -89,7 +89,17 @@ class Sync extends Command
         foreach ($this->config['sync_attributes'] as $attributeKey => $attributeColumn) {
             $id = getLettersToIdsTable($this->startColumn, $this->endColumn)[$attributeColumn];
 
-            if (empty($value[$id])) {
+            if (! isset($value[$id]) && is_bool($modelItem->{$attributeKey})) {
+                $modelItem->{$attributeKey} = false;
+                continue;
+            }
+
+            if (is_bool($modelItem->{$attributeKey})) {
+                $modelItem->{$attributeKey} = (bool) $value[$id];
+                continue;
+            }
+
+            if (! isset($value[$id])) {
                 continue;
             }
 
