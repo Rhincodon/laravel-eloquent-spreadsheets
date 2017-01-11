@@ -94,8 +94,8 @@ class Sync extends Command
                 continue;
             }
 
-            if (is_bool($modelItem->{$attributeKey}) && $modelItem->{$attributeKey} !== (bool)$value[$id]) {
-                $modelItem->{$attributeKey} = (bool)$value[$id];
+            if (is_bool($modelItem->{$attributeKey}) && $modelItem->{$attributeKey} !== (bool) $value[$id]) {
+                $modelItem->{$attributeKey} = (bool) $value[$id];
                 continue;
             }
 
@@ -104,7 +104,7 @@ class Sync extends Command
                 continue;
             }
 
-            if (!is_numeric($value[$id]) && (is_int($modelItem->{$attributeKey}) || is_float($modelItem->{$attributeKey}))) {
+            if (! is_numeric($value[$id]) && (is_int($modelItem->{$attributeKey}) || is_float($modelItem->{$attributeKey}))) {
                 $modelItem->{$attributeKey} = 0;
                 continue;
             }
