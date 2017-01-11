@@ -25,7 +25,7 @@ trait Saveable
         $result = [];
 
         foreach ($this->config['sync_attributes'] as $attributeKey => $attributeColumn) {
-            if (!isset($this->model->{$attributeKey})) {
+            if (! isset($this->model->{$attributeKey})) {
                 continue;
             }
 
