@@ -90,12 +90,22 @@ class Sync extends Command
             $id = getLettersToIdsTable($this->startColumn, $this->endColumn)[$attributeColumn];
 
             if (! isset($value[$id]) && is_bool($modelItem->{$attributeKey})) {
-                $modelItem->{$attributeKey} = false;
+                $modelItem->{$attributeKey} = 0;
                 continue;
             }
 
-            if (is_bool($modelItem->{$attributeKey})) {
-                $modelItem->{$attributeKey} = (bool) $value[$id];
+            if (is_bool($modelItem->{$attributeKey}) && $modelItem->{$attributeKey} !== (bool)$value[$id]) {
+                $modelItem->{$attributeKey} = (bool)$value[$id];
+                continue;
+            }
+
+            if (! isset($value[$id]) && (is_int($modelItem->{$attributeKey}) || is_float($modelItem->{$attributeKey}))) {
+                $modelItem->{$attributeKey} = 0;
+                continue;
+            }
+
+            if (!is_numeric($value[$id]) && (is_int($modelItem->{$attributeKey}) || is_float($modelItem->{$attributeKey}))) {
+                $modelItem->{$attributeKey} = 0;
                 continue;
             }
 
